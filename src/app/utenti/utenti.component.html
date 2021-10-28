@@ -1,0 +1,25 @@
+<div >
+    <ul *ngFor='let utente of utenti'>
+      <li> {{utente.user_id}} {{utente.first_name}} {{utente.last_name}}</li>     
+      <button class="button" type="submit" (click)="delete(utente.user_id)">Delete</button>
+    </ul>
+</div>
+<form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+
+  <div>
+    <label for="nome">
+      Nome
+    </label>
+    <input id="nome" type="text" formControlName="nome">
+  </div>
+
+  <div>
+    <label for="cognome">
+      Cognome
+    </label>
+    <input id="cognome" type="text" formControlName="cognome">
+  </div>
+
+  <button class="button" type="submit">Inserisci</button>
+
+</form>
